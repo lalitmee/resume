@@ -1,13 +1,13 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template for CV/Resume
+% Awesome CV LaTeX Template for Cover Letter
 %
 % This template has been downloaded from:
 % https://github.com/posquit0/Awesome-CV
 %
-% Author:
+% Authors:
 % Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
+% Lars Richter <mail@ayeks.de>
 %
 % Template license:
 % CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
@@ -52,16 +52,15 @@
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
-% \photo[rectangle,edge,right]{./examples/profile}
+% \photo[circle,noedge,left]{./profile.jpg}
 \name{Lalit}{Kumar}
-\position{Senior Software Engineer{\enskip\cdotp\enskip} Frontend}
-% \address{metion the address here}
+\position{Senior Software Engineer{\enskip\cdotp\enskip}Frontend}
+% \address{42-8, Bangbae-ro 15-gil, Seocho-gu, Seoul, 00681, Rep. of KOREA}
 
 \mobile{(+91) 97-1261-8438} 
 \email{lalitkumar.meena.lk@gmail.com}
 \github{lalitmee}
 \linkedin{lalitmee}
-% \homepage{lalitmee.github.io/portfolio}
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
@@ -77,31 +76,61 @@
 
 
 %-------------------------------------------------------------------------------
+%	LETTER INFORMATION
+%	All of the below lines must be filled out
+%-------------------------------------------------------------------------------
+% The company being applied to
+\recipient
+  {Company Recruitment Team}
+  {Company Name.\\Street Name\\City, India 560102}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+\lettertitle{Job Application for Software Engineer}
+% How the letter is opened
+\letteropening{Dear Mr./Ms./Dr. LastName,}
+% How the letter is closed
+\letterclosing{Sincerely,}
+% Any enclosures with the letter
+\letterenclosure[Attached]{Curriculum Vitae}
+
+
+%-------------------------------------------------------------------------------
 \begin{document}
 
 % Print the header with the above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[C]
+\makecvheader[R]
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
-% \makecvfooter
-%   {\today}
-%   {Lalit Kumar~~~·~~~Resume}
-%   {\thepage}
+\makecvfooter
+  {\today}
+  {Lalit Kumar~~~·~~~Cover Letter}
+  {}
+
+% Print the title with the above letter information
+\makelettertitle
+
+%-------------------------------------------------------------------------------
+%	LETTER CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvletter}
+
+\lettersection{About Me}
+to be filled...
+
+\lettersection{Why Company?}
+to be filled...
+
+\lettersection{Why Me?}
+to be filled...
+
+\end{cvletter}
 
 
 %-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify the content
-%-------------------------------------------------------------------------------
-\input{resume/summary.tex}
-\input{resume/experience.tex}
-\input{resume/skills.tex}
-\input{resume/projects.tex}
-\input{resume/education.tex}
-\input{resume/courses-and-activities.tex}
+% Print the signature and enclosures with the above letter information
+\makeletterclosing
 
-
-%-------------------------------------------------------------------------------
 \end{document}
