@@ -1,0 +1,63 @@
+\input{resume/preamble.tex}
+\usepackage{lastpage}
+\position{Senior Software Engineer}
+\geometry{left=1.5cm, right=1.5cm, top=1.4cm, bottom=1.6cm, footskip=.8cm}
+\setbool{acvSectionColorHighlight}{true}
+\renewcommand{\acvHeaderAfterSocialSkip}{0mm}
+\renewcommand*{\headerpositionstyle}[1]{{\fontsize{10pt}{12pt}\bodyfont\bfseries\color{awesome} #1}}
+\renewcommand*{\headersocialstyle}[1]{{\fontsize{8.5pt}{11pt}\bodyfont\color{text} #1}}
+\makeatletter
+\renewcommand*{\sectionstyle}[1]{{\fontsize{14pt}{17pt}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\makeatother
+\renewcommand*{\paragraphstyle}{\fontsize{10pt}{13pt}\bodyfont\upshape\color{text}}
+\renewcommand*{\descriptionstyle}[1]{{\fontsize{10pt}{13pt}\bodyfont\upshape\color{text} #1}}
+\renewcommand*{\entrytitlestyle}[1]{{\fontsize{11pt}{14pt}\bodyfont\bfseries\color{darktext} #1}}
+\renewcommand*{\entrypositionstyle}[1]{{\fontsize{9.5pt}{12pt}\bodyfont\color{graytext} #1}}
+\renewcommand*{\entrydatestyle}[1]{{\fontsize{9pt}{12pt}\bodyfont\color{graytext} #1}}
+\renewcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{12pt}\bodyfontlight\slshape\color{awesome} #1}}
+\renewcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{13pt}\bodyfont\bfseries\color{darktext} #1}}
+\renewcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{13pt}\bodyfont\color{text} #1}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\emergencystretch=1em
+\hypersetup{pdftitle={Lalit Kumar - Senior Software Engineer},pdfauthor={Lalit Kumar},urlcolor=text,linkcolor=text,citecolor=text}
+
+% Match icon size, spacing and baseline across the compact contact row.
+\newcommand{\contacticon}[1]{%
+  \raisebox{-0.1ex}{\fontsize{9.5pt}{11pt}\selectfont\textcolor{graytext}{#1}}\hspace{1mm}%
+}
+\newcommand{\employername}[1]{{\fontsize{12pt}{14pt}\bodyfont\bfseries\color{black} #1}}
+% Keep recognizable contact icons without the legacy photo minipages.
+\newcommand{\resumeheader}{%
+  \begingroup\centering
+  \headerfirstnamestyle{Lalit}\hspace{2mm}\headerlastnamestyle{Kumar}\par
+  \vspace{1mm}\headerpositionstyle{Senior Software Engineer}\par
+  \vspace{2mm}\headersocialstyle{\href{tel:+919712618438}{\contacticon{\faPhone}+91 97126 18438}\quad\textbar\quad
+    \href{mailto:lalitkumar.meena.lk@gmail.com}{\contacticon{\faEnvelope}lalitkumar.meena.lk@gmail.com}\quad\textbar\quad
+    \href{https://github.com/lalitmee}{\contacticon{\faGithub}lalitmee}\quad\textbar\quad
+    \href{https://www.linkedin.com/in/lalitmee}{\contacticon{\faLinkedinSquare}lalitmee}}\par
+  \endgroup
+}
+
+% A single table keeps category alignment without paragraph gaps between rows.
+\newenvironment{resumeskills}{%
+  \par\noindent\begingroup\paragraphstyle
+  \setlength{\tabcolsep}{0pt}%
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{\dimexpr\textwidth-3.4cm\relax}@{}}%
+}{%
+  \end{tabular}\endgroup\par\vspace{1mm}%
+}
+\newcommand{\resumeskill}[2]{%
+  \skilltypestyle{#1} & \skillsetstyle{#2}\\[1.5mm]%
+}
+% Local entry layout separates the header from the breakable bullet list.
+\newcommand{\resumeentry}[4]{%
+  \par\addvspace{3mm}\noindent
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r@{}}%
+  \entrytitlestyle{#1} & \entrylocationstyle{#3}\\%
+  \entrypositionstyle{#2} & \entrydatestyle{#4}\\%
+  \end{tabular*}\par\nobreak\vspace{1mm}%
+}
+\newenvironment{resumebullets}{%
+  \paragraphstyle\begin{itemize}[leftmargin=3.5mm,label=\textbullet,itemsep=2pt,topsep=1pt,parsep=0pt]
+}{\end{itemize}\par}

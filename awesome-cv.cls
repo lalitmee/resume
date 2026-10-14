@@ -75,7 +75,7 @@
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
 \RequirePackage{fontawesome}
-\RequirePackage[default,opentype]{sourcesanspro}
+% Body fonts are supplied by the repository and selected in resume/preamble.tex.
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
@@ -564,10 +564,12 @@
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{%
+  \hfuzz=3pt
   \vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
-  \color{gray}\vhrulefill{0.9pt}
+  \color{gray}\vhrulefill{0.9pt}\hspace{-2pt}
+  \par
 }
 
 % Define a subsection for CV
@@ -583,6 +585,7 @@
 \newenvironment{cvparagraph}{%
   \vspace{\acvSectionContentTopSkip}
   \vspace{-3mm}
+  \emergencystretch=1em
   \paragraphstyle
 }{%
   \par
